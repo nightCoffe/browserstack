@@ -3,16 +3,16 @@ package config;
 import org.aeonbits.owner.Config;
 
 
-    @Config.Sources({"classpath:userMobile.properties"})
-    public interface UserMobileConfig extends Config {
+@Config.Sources({"classpath:userMobile.properties"})
+public interface UserMobileConfig extends Config {
 
-        @Key("user")
-        String user();
+    @Key("user")
+    String user();
 
-        @Key("key")
-        String key();
+    @Key("key")
+    String key();
 
-        @Key("url")
-        String url();
-    }
+    @Key("url")
+    String url();
+}
 

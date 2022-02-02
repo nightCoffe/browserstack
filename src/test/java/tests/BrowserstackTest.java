@@ -29,6 +29,7 @@ public class BrowserstackTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Поиск Cat через поисковую строку")
     void searchCat() {
         step("Переходим в поле поиска", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
