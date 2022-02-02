@@ -22,24 +22,15 @@ public class MobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-        // Set your access credentials
         desiredCapabilities.setCapability("browserstack.user", userMobileConfig.user());
         desiredCapabilities.setCapability("browserstack.key", userMobileConfig.key());
-
-        // Set URL of the application under test
         desiredCapabilities.setCapability("app", userMobileConfig.url());
-
-        // Specify device and os_version for testing
         desiredCapabilities.setCapability("device", "Google Pixel 3");
         desiredCapabilities.setCapability("os_version", "9.0");
-
-        // Set other BrowserStack capabilities
         desiredCapabilities.setCapability("project", "First Java Project");
         desiredCapabilities.setCapability("build", "browserstack-build-1");
         desiredCapabilities.setCapability("name", "first_test");
 
-        // Initialise the remote Webdriver using BrowserStack remote URL
-        // and desired capabilities defined above
         return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
     }
 }
