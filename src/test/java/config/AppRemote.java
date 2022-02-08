@@ -1,5 +1,7 @@
 package config;
 
-public class AppRemote {
+import org.aeonbits.owner.ConfigFactory;
 
+public class AppRemote {
+    public static UserRemoteConfig userRemoteConfig = ConfigFactory.create(UserRemoteConfig.class);
 }

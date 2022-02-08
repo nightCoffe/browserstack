@@ -13,7 +13,7 @@ import static config.AppRealDevice.*;
 import static utils.FileUtils.getAbsolutePath;
 
 public class RealDeviceDriver implements WebDriverProvider {
-    public static URL getBrowserstackUrl() {
+    public static URL getRealUrl() {
         try {
             return new URL("http://127.0.0.1:4723/wd/hub");
         } catch (MalformedURLException e) {
@@ -35,6 +35,6 @@ public class RealDeviceDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app",
                 getAbsolutePath("src/test/resources/apk/app-alpha-universal-release.apk"));
 
-        return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
+        return new AndroidDriver(getRealUrl(), desiredCapabilities);
     }
 }

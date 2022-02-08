@@ -1,10 +1,10 @@
-package tests.realDevice;
+package tests.selenoid;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.LocalEmulatorMobileDriver;
-import drivers.RealDeviceDriver;
+import drivers.RemoteDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -20,7 +20,7 @@ public class TestBase {
     public static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        Configuration.browser = RealDeviceDriver.class.getName();
+        Configuration.browser = RemoteDriver.class.getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
         Configuration.timeout = 10000;

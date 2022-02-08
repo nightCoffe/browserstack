@@ -4,17 +4,18 @@ import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static config.AppEmulator.userEmulatorConfig;
+import static config.AppRemote.userRemoteConfig;
 import static utils.FileUtils.getAbsolutePath;
 
-public class LocalEmulatorMobileDriver implements WebDriverProvider {
-    public static URL getLocalUrl() {
+public class RemoteDriver implements WebDriverProvider {
+    public static URL getRemoteUrl() {
         try {
-            return new URL("http://127.0.0.1:4723/wd/hub");
+            return new URL(
+                    "https://" + userRemoteConfig.remoteUser() + ":" + userRemoteConfig.remotePassword()
+                            + "@selenoid.autotests.cloud/wd/hub");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -23,9 +24,9 @@ public class LocalEmulatorMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
-        desiredCapabilities.setCapability("platformName", userEmulatorConfig.emulatorPlatformName());
-        desiredCapabilities.setCapability("deviceName", userEmulatorConfig.emulatorDeviceName());
-        desiredCapabilities.setCapability("version", userEmulatorConfig.emulatorVersion());
+        desiredCapabilities.setCapability("platformName", "Android");
+        desiredCapabilities.setCapability("deviceName", "android");
+        desiredCapabilities.setCapability("version", "8.1");
 
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
@@ -34,6 +35,6 @@ public class LocalEmulatorMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app",
                 getAbsolutePath("src/test/resources/apk/app-alpha-universal-release.apk"));
 
-        return new AndroidDriver(getLocalUrl(), desiredCapabilities);
+        return new AndroidDriver(getRemoteUrl(), desiredCapabilities);
     }
 }
