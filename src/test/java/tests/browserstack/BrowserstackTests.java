@@ -2,6 +2,7 @@ package tests.browserstack;
 
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -15,6 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class BrowserstackTests extends TestBase {
 
     @Test
+    @Tag("browserstack")
     @DisplayName("Поиск browserstack через поисковую строку")
     void searchTest() {
         step("Переходим в поле поиска", () -> {
@@ -29,6 +31,7 @@ public class BrowserstackTests extends TestBase {
     }
 
     @Test
+    @Tag("browserstack")
     @DisplayName("Поиск Cat через поисковую строку")
     void searchCat() {
         step("Переходим в поле поиска", () -> {

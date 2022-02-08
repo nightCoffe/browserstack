@@ -33,6 +33,7 @@ public class RemoteTests extends TestBase{
     }
 
     @Test
+    @Tag("selenoid")
     @DisplayName("Поиск Cat через поисковую строку")
     void searchCat() {
         step("скипаем выбор языка", () -> {
