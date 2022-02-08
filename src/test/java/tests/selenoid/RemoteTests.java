@@ -2,6 +2,7 @@ package tests.selenoid;
 
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -14,6 +15,7 @@ import static io.qameta.allure.Allure.step;
 public class RemoteTests extends TestBase{
 
     @Test
+    @Tag("selenoid")
     @DisplayName("Поиск browserstack через поисковую строку")
     void searchTest() {
         step("скипаем выбор языка", () -> {
