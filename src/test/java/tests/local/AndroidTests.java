@@ -1,4 +1,4 @@
-package tests.browserstack;
+package tests.local;
 
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.DisplayName;
@@ -8,15 +8,17 @@ import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class BrowserstackTest extends TestBase {
+public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Поиск browserstack через поисковую строку")
     void searchTest() {
+        step("скипаем выбор языка", () -> {
+            back();
+        });
         step("Переходим в поле поиска", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
         });
@@ -24,7 +26,7 @@ public class BrowserstackTest extends TestBase {
             $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
         });
         step("Проверка что ответов в поиской выдачи больше 0", () -> {
-            $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
+            $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(sizeGreaterThan(0));
         });
     }
 

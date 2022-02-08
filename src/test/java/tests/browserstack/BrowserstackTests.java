@@ -1,4 +1,4 @@
-package tests.local;
+package tests.browserstack;
 
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.DisplayName;
@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-public class BrowserstackTest extends TestBase {
+public class BrowserstackTests extends TestBase {
 
     @Test
     @DisplayName("Поиск browserstack через поисковую строку")
