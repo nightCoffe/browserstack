@@ -3,8 +3,8 @@ package config;
 import org.aeonbits.owner.Config;
 
 
-@Config.Sources({"classpath:userMobile.properties"})
-public interface UserMobileConfig extends Config {
+@Config.Sources({"classpath:userBrowserstack.properties"})
+public interface UserBrowserstackConfig extends Config {
 
     @Key("user")
     String user();

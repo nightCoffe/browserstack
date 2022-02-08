@@ -1,4 +1,4 @@
-package tests.local;
+package tests.emulator;
 
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.DisplayName;
@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 

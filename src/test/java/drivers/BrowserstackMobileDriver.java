@@ -8,9 +8,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static config.App.userMobileConfig;
+import static config.AppBrowserstack.userBrowserstackConfig;
 
-public class MobileDriver implements WebDriverProvider {
+public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static URL getBrowserstackUrl() {
         try {
@@ -22,9 +22,9 @@ public class MobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-        desiredCapabilities.setCapability("browserstack.user", userMobileConfig.user());
-        desiredCapabilities.setCapability("browserstack.key", userMobileConfig.key());
-        desiredCapabilities.setCapability("app", userMobileConfig.url());
+        desiredCapabilities.setCapability("browserstack.user", userBrowserstackConfig.user());
+        desiredCapabilities.setCapability("browserstack.key", userBrowserstackConfig.key());
+        desiredCapabilities.setCapability("app", userBrowserstackConfig.url());
         desiredCapabilities.setCapability("device", "Google Pixel 3");
         desiredCapabilities.setCapability("os_version", "9.0");
         desiredCapabilities.setCapability("project", "First Java Project");

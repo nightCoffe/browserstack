@@ -1,6 +1,6 @@
 package helpers;
 
-import config.UserMobileConfig;
+import config.UserBrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 public class Browserstack {
     public static String videoUrl(String sessionId) {
 
-        UserMobileConfig userMobileConfig = ConfigFactory.create(UserMobileConfig.class);
+        UserBrowserstackConfig userMobileConfig = ConfigFactory.create(UserBrowserstackConfig.class);
 
         String user = userMobileConfig.user();
         String key = userMobileConfig.key();
