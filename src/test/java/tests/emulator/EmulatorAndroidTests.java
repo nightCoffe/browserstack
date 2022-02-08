@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class AndroidTests extends TestBase {
+public class EmulatorAndroidTests extends TestBase {
 
     @Test
     @DisplayName("Поиск browserstack через поисковую строку")
@@ -32,6 +32,9 @@ public class AndroidTests extends TestBase {
     @Test
     @DisplayName("Поиск Cat через поисковую строку")
     void searchCat() {
+        step("скипаем выбор языка", () -> {
+            back();
+        });
         step("Переходим в поле поиска", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
         });

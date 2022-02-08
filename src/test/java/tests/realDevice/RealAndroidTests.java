@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-public class RealAndroidTests {
+public class RealAndroidTests extends TestBase{
     @Test
     @DisplayName("Поиск browserstack через поисковую строку")
     void searchTest() {

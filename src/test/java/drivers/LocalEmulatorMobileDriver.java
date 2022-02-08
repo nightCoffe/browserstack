@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static config.AppEmulator.userEmulatorConfig;
 import static utils.FileUtils.getAbsolutePath;
 
 public class LocalEmulatorMobileDriver implements WebDriverProvider {
@@ -22,9 +23,9 @@ public class LocalEmulatorMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
-        desiredCapabilities.setCapability("platformName", "android");
-        desiredCapabilities.setCapability("deviceName", "Pixel_4_API_30");
-        desiredCapabilities.setCapability("version", "11.0");
+        desiredCapabilities.setCapability("platformName", userEmulatorConfig.emulatorPlatformName());
+        desiredCapabilities.setCapability("deviceName", userEmulatorConfig.emulatorDeviceName());
+        desiredCapabilities.setCapability("version", userEmulatorConfig.emulatorVersion());
 
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
