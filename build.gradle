@@ -55,8 +55,6 @@ tasks.withType(Test) {
 
 task many_tags_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "selenoid"
-        includeTags "browserstack"
     }
 }
 
