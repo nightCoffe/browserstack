@@ -21,6 +21,15 @@ public class RemoteDriver implements WebDriverProvider {
         }
     }
 
+    private URL apkUrl() {
+        try {
+            return new URL("https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
@@ -32,8 +41,7 @@ public class RemoteDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("language", "en");
         desiredCapabilities.setCapability("appPackage", "org.wikipedia.alpha");
         desiredCapabilities.setCapability("appActivity", "org.wikipedia.main.MainActivity");
-        desiredCapabilities.setCapability("app",
-                getAbsolutePath("src/test/resources/apk/app-alpha-universal-release.apk"));
+        desiredCapabilities.setCapability("app", apkUrl());
 
         return new AndroidDriver(getRemoteUrl(), desiredCapabilities);
     }
