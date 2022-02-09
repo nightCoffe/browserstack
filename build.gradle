@@ -34,6 +34,7 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:1.7.29",
+            "org.assertj:assertj-core:3.19.0",
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
@@ -41,6 +42,7 @@ dependencies {
 tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
+
 
     testLogging {
         lifecycle {
@@ -50,3 +52,12 @@ tasks.withType(Test) {
         }
     }
 }
+
+task many_tags_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "selenoid"
+        includeTags "browserstack"
+    }
+}
+
+
