@@ -63,7 +63,7 @@ public class RemoteTests extends TestBase {
         step("Переходим в поле поиска", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
         });
-        step("Проверяем что в строке поиска выставлен англ язык", () -> {
+        step("Проверяем что в поле поиска выставлен англ язык", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/search_lang_button")).shouldBe(visible).shouldHave(text("EN"));
         });
         step("Вводим слово Spearfishing Cat", () -> {
