@@ -18,7 +18,7 @@ public class RemoteTests extends TestBase {
     @Tag("selenoid")
     @DisplayName("Поиск browserstack через поисковую строку")
     void searchTest() {
-        step("скипаем выбор языка", () -> {
+        step("Закрываем страницу выбора языка", () -> {
             back();
         });
         step("Переходим в поле поиска", () -> {
@@ -36,7 +36,7 @@ public class RemoteTests extends TestBase {
     @Tag("selenoid")
     @DisplayName("Поиск Cat через поисковую строку")
     void searchCatTest() {
-        step("скипаем выбор языка", () -> {
+        step("Закрываем страницу выбора языка", () -> {
             back();
         });
         step("Переходим в поле поиска", () -> {

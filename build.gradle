@@ -43,18 +43,12 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
-
     testLogging {
         lifecycle {
 //            events "started", "failed"
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
-    }
-}
-
-task many_tags_tests(type: Test) {
-    useJUnitPlatform {
     }
 }
 
