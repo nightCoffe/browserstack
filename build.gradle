@@ -60,4 +60,18 @@ task many_tags_tests(type: Test) {
     }
 }
 
+task selenoid(type: Test) {
+    useJUnitPlatform {
+        includeTags 'Selenoid'
+    }
+    systemProperty "deviceHost", "selenoid"
+}
+
+task browserstack(type: Test) {
+    useJUnitPlatform {
+        includeTags 'Browserstack'
+    }
+    systemProperty "deviceHost", "browserstack"
+}
+
 
