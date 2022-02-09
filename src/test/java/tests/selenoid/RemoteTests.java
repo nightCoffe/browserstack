@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
-public class RemoteTests extends TestBase{
+public class RemoteTests extends TestBase {
 
     @Test
     @Tag("selenoid")
@@ -35,7 +35,7 @@ public class RemoteTests extends TestBase{
     @Test
     @Tag("selenoid")
     @DisplayName("Поиск Cat через поисковую строку")
-    void searchCat() {
+    void searchCatTest() {
         step("скипаем выбор языка", () -> {
             back();
         });
@@ -47,6 +47,30 @@ public class RemoteTests extends TestBase{
         });
         step("Проверка что в поисковой выдачи есть слово Cat и оно видимо", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldBe(visible).shouldHave(text("Cat"));
+        });
+    }
+
+    @Test
+    @Tag("selenoid")
+    @DisplayName("Поиск Spearfishing через поисковую строку")
+    void searchSpearfishingTest() {
+        step("Закрываем страницу выбора языка", () -> {
+            back();
+        });
+        step("Проверяем что перешли на страницу поиска", () -> {
+            $(MobileBy.className("android.widget.TextView")).shouldBe(visible).shouldHave(text("Search Wikipedia"));
+        });
+        step("Переходим в поле поиска", () -> {
+            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
+        });
+        step("Проверяем что в строке поиска выставлен англ язык", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/search_lang_button")).shouldBe(visible).shouldHave(text("EN"));
+        });
+        step("Вводим слово Spearfishing Cat", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Spearfishing");
+        });
+        step("Проверка что в поисковой выдачи есть слово Spearfishing и оно видимо", () -> {
+            $(MobileBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldBe(visible).shouldHave(text("Spearfishing"));
         });
     }
 }
