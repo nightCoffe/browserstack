@@ -8,7 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static config.AppRemote.userRemoteConfig;
-import static utils.FileUtils.getAbsolutePath;
 
 public class RemoteDriver implements WebDriverProvider {
     public static URL getRemoteUrl() {
