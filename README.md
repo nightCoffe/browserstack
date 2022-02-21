@@ -22,4 +22,4 @@ ___
 ![](images/Github.png)
 ![](images/Jenkins.png)
 ![](images/Rest-Assured.png)
-<img src="https://github.com/nightCoffe/browserstack/blob/main/images/androidstudio.png?raw=true" width="40">
+<img src="https://github.com/nightCoffe/browserstack/blob/main/images/logo/androidstudio.png?raw=true" width="40">
