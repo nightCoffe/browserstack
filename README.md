@@ -19,7 +19,7 @@ ___
 ![](images/logo/Browserstack.png)
 ![](images/logo/Github.png)
 ![](images/logo/Jenkins.png)
-![](images/logo/Rest-Assured.png)
+
 <img src="https://github.com/nightCoffe/browserstack/blob/main/images/logo/androidstudio.png?raw=true" width="40">
 
 ___
