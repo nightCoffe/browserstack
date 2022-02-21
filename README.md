@@ -52,6 +52,7 @@ The test results can be found in:
 + [Jenkins](#jenkins)
 + [Allure Report](#allure-report)
 + [Allure TestOps](#allure-testOps)
++ [Browserstack](#browserstack)
 
 
 ### Jenkins
@@ -103,17 +104,11 @@ ___
   <img src="images/screenshot/browserstack.JPG">
 </p>
 
-
-<p align="center">
-  <img src="images/screenshot/browserstack1.JPG">
-</p>
-
-
 <p align="center">
   <img src="images/screenshot/browserstack2.JPG">
 </p>
 
-Video the test run in Browserstack.
+### Video the test run in Browserstack.
 
 
 <p align="center">
