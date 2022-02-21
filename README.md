@@ -98,7 +98,7 @@ The test results can be found in:
 
 ___
 
-## Browserstack
+### Browserstack
 
 <p align="center">
   <img src="images/screenshot/browserstack.JPG">
